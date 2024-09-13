@@ -181,8 +181,18 @@ while loop == 1:
         print(ipalavra)
         print('letras erradas:',lerradas)
     
-    #Encerramento/Loop
-    loop = int(input('Deseja jogar novamente?\n1- Sim!\n2- Não'))
+    #Encerramento/Loop2
+    while True:
+        try:
+            loop = int(input('Deseja jogar novamente?\n1- Sim!\n2- Não'))
+            if loop != 1 and loop != 2:
+                print("Caracter inválido. Por favor, escolha a opção 1 ou 2.")
+                continue
+        except ValueError:
+            print("Caracter inválido. Por favor, escolha a opção 1 ou 2.")
+            continue
+        else:
+            break
     if loop == 1:
         lcertas.clear()
         lerradas.clear()
